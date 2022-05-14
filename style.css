@@ -75,6 +75,15 @@ body {
     cursor: pointer; /* Cursor on hover */
 }
 
+#grid-range::-moz-range-thumb {
+    /* For Firefox */
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: grey;
+    cursor: pointer;
+    border-radius: 0px;
+}
 
 
 
