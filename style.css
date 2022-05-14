@@ -1,0 +1,10 @@
+.grid {
+    display:inline-grid;
+    border: 1px solid;
+}
+
+.grid-item {
+    width: 25px;
+    height: 25px;
+    transition: background-color 0.2s;
+}
