@@ -39,6 +39,23 @@ body {
     width: 3rem;
 }
 
+.play-container button {
+    border: 1px solid;
+    transition: 0.15s;
+    height: 2rem;
+    border-radius: 0.3rem;
+}
+
+.play-container button:hover {
+    transform: scale(1.1);
+}
+
+.play-container button.active {
+    border: 1px solid;
+    background-color: #413F42;
+    color: white;
+}
+
 #grid-range {
     opacity: 0.7;
     transition: 0.2s;
@@ -74,19 +91,3 @@ body {
 }
 
 
-.play-container button {
-    border: 1px solid;
-    transition: 0.15s;
-    height: 2rem;
-    border-radius: 0.3rem;
-}
-
-.play-container button:hover {
-    transform: scale(1.1);
-}
-
-.play-container button.active {
-    border: 1px solid;
-    background-color: #413F42;
-    color: white;
-}
