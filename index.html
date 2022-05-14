@@ -7,6 +7,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="./node_modules/destyle.css/destyle.css">
     <link rel="stylesheet" href="./style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -14,11 +19,11 @@
     <div class="play-container">
         <div class="controls">
             <input id ="color-picker" type="color">
-            <button id="color-btn">Color Tool</button>
+            <button id="color-btn" class="active">Color Tool</button>
             <button id="eraser-btn">Eraser</button>
             <button id="clear-btn">Clear</button>
-            <input id = "grid-range" type="range" min="1" max="64">
-            <p></p>
+            <input id = "grid-range" type="range" min="1" max="64" value="16">
+            <p id="grid-range-text"></p>
         </div>
         <div class="grid"></div>
         <div class="controls"></div>

@@ -4,6 +4,7 @@ const colorBtn = document.querySelector('#color-btn')
 const eraserBtn = document.querySelector('#eraser-btn')
 const clearBtn = document.querySelector('#clear-btn')
 const gridRange = document.querySelector('#grid-range')
+const gridRangeText = document.querySelector('#grid-range-text')
 
 let pickColor =  `${colorPicker.value}`
 let currColor = pickColor
@@ -48,7 +49,14 @@ gridRange.onchange = () => {
     gridSize = gridRange.value
     deleteGridItems()
     makeGrid()
+    updateRange()
 }
+
+gridRange.onmousemove = (e) => {
+    gridSize = e.target.value
+    updateRange()
+}
+
 
 function makeGrid() {
     // Creating the grid
@@ -83,8 +91,8 @@ function applyColor(e) {
     e.target.style.backgroundColor = currColor
 }
 
-function updateRange {
-    
+function updateRange() {
+    gridRangeText.innerText = `${gridSize} x ${gridSize}`
 }
 
 makeGrid()
