@@ -83,7 +83,7 @@ body {
     margin: 0   70px;
     height: 500px;
     display:inline-grid;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 50px;
+    box-shadow: rgba(114, 118, 123, 0.2) 5px 5px 50px;
 }
 
 .grid-item {
