@@ -8,3 +8,20 @@
     height: 25px;
     transition: background-color 0.2s;
 }
+
+.play-container button {
+    border: 2px solid;
+    transition: 0.15s;
+}
+
+.play-container button:hover {
+    transform: scale(1.1);
+}
+
+.play-container button:active {
+    background-color: lightblue;
+}
+
+.play-container button.active {
+    background-color: grey;
+}
