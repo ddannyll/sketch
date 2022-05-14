@@ -23,6 +23,7 @@ document.body.onmouseup = () => {mouseDown = false}
 
 
 function activateColorMode() {
+    pickColor = colorPicker.value
     currColor = pickColor
     colorBtn.classList.add('active')
     eraserBtn.classList.remove('active')
