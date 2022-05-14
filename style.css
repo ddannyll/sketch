@@ -1,4 +1,3 @@
-
 body {
     font-family: 'poppins';
 }
@@ -10,10 +9,9 @@ body {
     font-size: 3rem;
 }
 
-
 .play-container {
     text-align: center;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -63,16 +61,20 @@ body {
 }
 
 #grid-range:hover {
-    opacity:1;
+    opacity: 1;
 }
 
-
 #grid-range::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    width: 20px; /* Set a specific slider handle width */
-    height: 20px; /* Slider handle height */
-    background: grey; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+    -webkit-appearance: none;
+    /* Override default look */
+    width: 20px;
+    /* Set a specific slider handle width */
+    height: 20px;
+    /* Slider handle height */
+    background: grey;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
 }
 
 #grid-range::-moz-range-thumb {
@@ -85,18 +87,14 @@ body {
     border-radius: 0px;
 }
 
-
-
 .grid {
     width: 500px;
-    margin: 0   70px;
+    margin: 0 70px;
     height: 500px;
-    display:inline-grid;
+    display: inline-grid;
     box-shadow: rgba(114, 118, 123, 0.2) 5px 5px 50px;
 }
 
 .grid-item {
     transition: background-color 0.2s;
 }
-
-

@@ -6,7 +6,7 @@ const clearBtn = document.querySelector('#clear-btn')
 const gridRange = document.querySelector('#grid-range')
 const gridRangeText = document.querySelector('#grid-range-text')
 
-let pickColor =  `${colorPicker.value}`
+let pickColor = `${colorPicker.value}`
 let currColor = pickColor
 let backColor = 'white'
 let gridSize = `${gridRange.value}`
@@ -19,7 +19,9 @@ grid.onmousedown = (e) => {
     e.preventDefault()
 }
 
-document.body.onmouseup = () => {mouseDown = false}
+document.body.onmouseup = () => {
+    mouseDown = false
+}
 
 
 function activateColorMode() {
@@ -38,7 +40,7 @@ function activateEraseMode() {
 // Event listeners for Buttons + Range + Color
 clearBtn.onclick = () => {
     let gridItems = document.querySelectorAll('.grid-item')
-    gridItems.forEach((gridItem)=>{
+    gridItems.forEach((gridItem) => {
         gridItem.style.backgroundColor = 'white'
     })
 }
@@ -66,10 +68,10 @@ gridRange.onmousemove = (e) => {
 
 function makeGrid() {
     // Creating the grid
-    grid.style.cssText =`
+    grid.style.cssText = `
         grid-template-columns: repeat(${gridSize}, 1fr);
         grid-template-rows: repeat(${gridSize}, 1fr);`
-    
+
     // Populating the grid
     for (let i = 0; i < gridSize ** 2; i++) {
         const gridItem = document.createElement('div')
