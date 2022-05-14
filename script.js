@@ -24,8 +24,22 @@ document.body.onmouseup = () => {
 }
 
 
+// Event listeners for Buttons + Range + Color
+clearBtn.onclick = () => {
+    let gridItems = document.querySelectorAll('.grid-item')
+    gridItems.forEach((gridItem) => {
+        gridItem.style.backgroundColor = backColor
+    })
+}
+eraserBtn.onclick = activateEraseMode
+colorBtn.onclick = activateColorMode
+colorPicker.onchange = changeColor
+colorPicker.oninput = changeColor
+gridRange.onchange = updateGridRange
+gridRange.oninput = updateGridRange
+
+
 function activateColorMode() {
-    pickColor = colorPicker.value
     currColor = pickColor
     colorBtn.classList.add('active')
     eraserBtn.classList.remove('active')
@@ -36,42 +50,26 @@ function activateEraseMode() {
     eraserBtn.classList.add('active')
     colorBtn.classList.remove('active')
 }
-
-// Event listeners for Buttons + Range + Color
-clearBtn.onclick = () => {
-    let gridItems = document.querySelectorAll('.grid-item')
-    gridItems.forEach((gridItem) => {
-        gridItem.style.backgroundColor = 'white'
-    })
-}
-eraserBtn.onclick = activateEraseMode
-
-colorBtn.onclick = activateColorMode
-
-colorPicker.onchange = (e) => {
+function changeColor(e) {
     pickColor = e.target.value
     activateColorMode()
 }
 
-gridRange.onchange = () => {
-    gridSize = gridRange.value
-    deleteGridItems()
-    makeGrid()
-    updateRange()
-}
-
-gridRange.onmousemove = (e) => {
+function updateGridRange(e) {
     gridSize = e.target.value
-    updateRange()
+    gridRangeText.innerText = `${gridSize} x ${gridSize}`
+    if (e.type === 'change') {
+        deleteGridItems()
+        makeGrid()
+    }
 }
-
 
 function makeGrid() {
     // Creating the grid
     grid.style.cssText = `
-        grid-template-columns: repeat(${gridSize}, 1fr);
-        grid-template-rows: repeat(${gridSize}, 1fr);`
-
+    grid-template-columns: repeat(${gridSize}, 1fr);
+    grid-template-rows: repeat(${gridSize}, 1fr);`
+    
     // Populating the grid
     for (let i = 0; i < gridSize ** 2; i++) {
         const gridItem = document.createElement('div')
@@ -99,9 +97,7 @@ function applyColor(e) {
     e.target.style.backgroundColor = currColor
 }
 
-function updateRange() {
-    gridRangeText.innerText = `${gridSize} x ${gridSize}`
-}
+
 
 makeGrid()
-updateRange()
+gridRangeText.innerText = `${gridSize} x ${gridSize}`
