@@ -22,6 +22,18 @@ grid.onmousedown = (e) => {
 document.body.onmouseup = () => {mouseDown = false}
 
 
+function activateColorMode() {
+    currColor = pickColor
+    colorBtn.classList.add('active')
+    eraserBtn.classList.remove('active')
+}
+
+function activateEraseMode() {
+    currColor = backColor
+    eraserBtn.classList.add('active')
+    colorBtn.classList.remove('active')
+}
+
 // Event listeners for Buttons + Range + Color
 clearBtn.onclick = () => {
     let gridItems = document.querySelectorAll('.grid-item')
@@ -29,20 +41,13 @@ clearBtn.onclick = () => {
         gridItem.style.backgroundColor = 'white'
     })
 }
-eraserBtn.onclick = () => {
-    currColor = backColor
-    eraserBtn.classList.add('active')
-    colorBtn.classList.remove('active')
-} 
+eraserBtn.onclick = activateEraseMode
 
-colorBtn.onclick = () => {
-    currColor = pickColor
-    colorBtn.classList.add('active')
-    eraserBtn.classList.remove('active')
-}
+colorBtn.onclick = activateColorMode
+
 colorPicker.onchange = (e) => {
     pickColor = e.target.value
-    currColor = pickColor
+    activateColorMode()
 }
 
 gridRange.onchange = () => {
